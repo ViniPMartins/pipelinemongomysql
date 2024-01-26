@@ -1,6 +1,7 @@
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import os
+from dotenv import load_dotenv
 import pandas as pd
 
 def connect_mongoDB(uri):
@@ -56,7 +57,9 @@ def make_query_dataframe(collection, query, format_date=True):
 
 if __name__ == '__main__':
 
-    ***REMOVED***
+    load_dotenv()
+    uri_mongo = os.getenv('MONGO_URI')
+    
     client = connect_mongoDB(uri_mongo)
     db, collection = setup_db_colletion(client, 'db_produtos', 'produtos')
 
@@ -67,5 +70,7 @@ if __name__ == '__main__':
 
     df_produtos = make_query_dataframe(collection, {'Data da Compra':{'$regex':'/202[1-9]'}})
     save_csv_file(df_produtos, 'csv_data/data_products_21_29.csv')
+
+    client.close()
 
 

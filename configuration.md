@@ -13,8 +13,13 @@ gp validate
 Abaixo, seguem as configurações para criação de um usuário no mysql se necessário:
 
 ```mysql
-CREATE USER 'vinipmartins'@'localhost' IDENTIFIED BY 'mysql-123';
-GRANT ALL PRIVILEGES ON *.* TO 'vinipmartins'@'localhost';
+CREATE USER 'nomedousuario'@'localhost' IDENTIFIED BY 'senhadousuario';
+GRANT ALL PRIVILEGES ON *.* TO 'nomedousuario'@'localhost';
 EXIT
 ```
 
+Também é necessário a criação de um arquivo .env com as seguintes variáveis
+MYSQL_HOST="localhost"
+MYSQL_USER="nomedousuario"
+MYSQL_PASSWORD="senhadousuario"
+MONGO_URI="urldeconexaodabasededadosmongodb"
