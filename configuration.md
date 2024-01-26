@@ -1,7 +1,16 @@
-pip install requests
+Inicialmente realizar a inicialização do ambiente virtual python:
 
-pip install pymongo==4.4.0
+'''bash
+source venv/bin/activate
+'''
 
-pip install pandas==2.0.3
+Abaixo, seguem as configurações para criação de um usuário no mysql se necessário:
 
-pip install mysql-connector-python==8.0.33
+'''
+sudo mysql
+
+CREATE USER 'vinipmartins'@'localhost' IDENTIFIED BY 'mysql-123';
+GRANT ALL PRIVILEGES ON *.* TO 'vinipmartins'@'localhost';
+exit
+'''
+
