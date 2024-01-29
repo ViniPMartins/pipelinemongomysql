@@ -59,9 +59,11 @@ if __name__ == '__main__':
 
     load_dotenv()
     uri_mongo = os.getenv('MONGO_URI')
+    db_name = os.getenv('MONGO_DB_NAME')
+    collection_name = os.getenv("MONGO_COLLECTION_NAME")
     
     client = connect_mongoDB(uri_mongo)
-    db, collection = setup_db_colletion(client, 'db_produtos', 'produtos')
+    db, collection = setup_db_colletion(client, db_name, collection_name)
 
     rename_columns(collection, {'lat':'latitude','lon':'longitude'})
 

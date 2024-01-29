@@ -31,4 +31,6 @@ MYSQL_HOST="localhost"
 MYSQL_USER="nomedousuario"
 MYSQL_PASSWORD="senhadousuario"
 MONGO_URI="urldeconexaodabasededadosmongodb"
+MONGO_DB_NAME="nomebasededadosmongo"
+MONGO_COLLECTION_NAME="nomecolecaomongo"
 ```
